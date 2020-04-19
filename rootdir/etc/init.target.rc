@@ -70,6 +70,9 @@ on fs
 
     swapon_all /vendor/etc/fstab.qcom
 
+    rm /cache/boot_lc_main.txt
+    start boot_lc_main
+
 on late-fs
     wait_for_prop hwservicemanager.ready true
     exec_start wait_for_keymaster
@@ -182,6 +185,13 @@ service vendor.nv_mac /vendor/bin/nv_mac
     group system inet net_admin wifi net_raw
     oneshot
 
+service boot_lc_main /system/bin/logcat -f /cache/boot_lc_main.txt
+    class main
+    user root
+    group root system
+    disabled
+    oneshot
+
 # ZRAM
 on property:vendor.post_boot.parsed=1
     # ZRAM setup
@@ -198,3 +208,6 @@ on property:sys.boot_completed=1
     # Enable ZRAM on boot_complete
     write /proc/sys/vm/swappiness 100
     write /sys/block/zram0/disksize 2147483648
+
+on property:sys.boot_completed=1
+    stop boot_lc_main
