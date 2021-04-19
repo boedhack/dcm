@@ -141,6 +141,10 @@ case "$soc_id" in
     echo 0 > /sys/devices/system/cpu/cpu0/core_ctl/enable
     echo 0 > /sys/devices/system/cpu/cpu6/core_ctl/enable
 
+    # Setting b.L scheduler parameters
+    # default sched up and down migrate values are 90 and 85
+    echo 85 > /proc/sys/kernel/sched_downmigrate
+    echo 95 > /proc/sys/kernel/sched_upmigrate
     # default sched up and down migrate values are 100 and 95
     echo 85 > /proc/sys/kernel/sched_group_downmigrate
     echo 100 > /proc/sys/kernel/sched_group_upmigrate
@@ -241,6 +245,10 @@ case "$soc_id" in
     echo 0 > /sys/devices/system/cpu/cpu0/core_ctl/enable
     echo 0 > /sys/devices/system/cpu/cpu6/core_ctl/enable
 
+    # Setting b.L scheduler parameters
+    # default sched up and down migrate values are 71 and 65
+    echo 85 > /proc/sys/kernel/sched_downmigrate
+    echo 95 > /proc/sys/kernel/sched_upmigrate
     # default sched up and down migrate values are 100 and 95
     echo 85 > /proc/sys/kernel/sched_group_downmigrate
     echo 100 > /proc/sys/kernel/sched_group_upmigrate
