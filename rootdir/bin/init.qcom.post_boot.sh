@@ -179,8 +179,13 @@ case "$soc_id" in
     # sched_load_boost as -6 is equivalent to target load as 85. It is per cpu tunable.
     echo -6 >  /sys/devices/system/cpu/cpu6/sched_load_boost
     echo -6 >  /sys/devices/system/cpu/cpu7/sched_load_boost
+    echo 85 > /sys/devices/system/cpu/cpu6/cpufreq/schedutil/hispeed_load
 
     # Set memory parameters
+    echo "0:1209600" > /sys/module/cpu_boost/parameters/input_boost_freq
+    echo 100 > /sys/module/cpu_boost/parameters/input_boost_ms
+
+    # Set Memory parameters
     configure_memory_parameters
 
     # Enable bus-dcvs
@@ -299,6 +304,10 @@ case "$soc_id" in
     # sched_load_boost as -6 is equivalent to target load as 85. It is per cpu tunable.
     echo -6 >  /sys/devices/system/cpu/cpu6/sched_load_boost
     echo -6 >  /sys/devices/system/cpu/cpu7/sched_load_boost
+    echo 85 > /sys/devices/system/cpu/cpu6/cpufreq/schedutil/hispeed_load
+
+    echo "0:1248000" > /sys/module/cpu_boost/parameters/input_boost_freq
+    echo 100 > /sys/module/cpu_boost/parameters/input_boost_ms
 
     # Set Memory parameters
     configure_memory_parameters
