@@ -1,13 +1,13 @@
 #
-# Copyright (C) 2021 The PixelExperience Project
+# Copyright (C) 2021 Project 404
 #
 # SPDX-License-Identifier: Apache-2.0
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/havoc_mojito.mk
+    $(LOCAL_DIR)/p404_mojito.mk
 
 COMMON_LUNCH_CHOICES := \
-    havoc_mojito-user \
-    havoc_mojito-userdebug \
-    havoc_mojito-eng
+    p404_mojito-user \
+    p404_mojito-userdebug \
+    p404_mojito-eng
