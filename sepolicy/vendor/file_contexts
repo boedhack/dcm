@@ -43,8 +43,8 @@
 /sys/devices/platform/soc/[a-z0-9]+.qcom,mdss_mdp/drm/card([0-3])+/card([0-3])+-DSI-1/disp_param        u:object_r:vendor_sysfs_graphics:s0
 
 # Health
-/sys/devices/platform/soc/88c000.i2c/i2c-2/2-0065/power_supply/bq2597x-standalone(/.*)?                                                         u:object_r:sysfs_battery_supply:s0
-/sys/devices/platform/soc/soc:maxim_ds28e16/power_supply/batt_verify(/.*)?                                                                      u:object_r:sysfs_battery_supply:s0
+/sys/devices/platform/soc/88c000.i2c/i2c-2/2-0065/power_supply/bq2597x-standalone(/.*)?                                                         u:object_r:vendor_sysfs_battery_supply:s0
+/sys/devices/platform/soc/soc:maxim_ds28e16/power_supply/batt_verify(/.*)?                                                                      u:object_r:vendor_sysfs_battery_supply:s0
 
 # IR
 /dev/spidev[0-9]\.1                                                     u:object_r:lirc_device:s0
