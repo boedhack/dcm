@@ -257,7 +257,7 @@ PRODUCT_COPY_FILES += \
 
 # Lights
 PRODUCT_PACKAGES += \
-    android.hardware.lights-service.qti
+    android.hardware.lights-service.mojito
 
 # Media
 PRODUCT_PACKAGES += \
