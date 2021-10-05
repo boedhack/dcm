@@ -85,7 +85,7 @@ PRODUCT_PACKAGES += \
 # ANT+
 PRODUCT_PACKAGES += \
     AntHalService-Soong \
-    antradio \
+    antradio_app \
     com.dsi.ant@1.0.vendor
 
 # Audio
